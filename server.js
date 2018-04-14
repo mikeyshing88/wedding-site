@@ -3,12 +3,14 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const app = express();
 
+app.set("port", process.env.PORT || 3001);
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extedned: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post('/api/rsvp', (req, res) => {
   nodemailer.createTestAccount((err, account) => {
@@ -42,8 +44,6 @@ app.post('/api/rsvp', (req, res) => {
   })
 });
 
-const PORT = process.env.PORT || 3001;
-
-app.listen(PORT, () => {
-  console.log(`Server listening - port ${PORT}`)
+app.listen(app.get("port"), () => {
+  console.log(`Find the server at: http://localhost:${app.get("port")}/`); // eslint-disable-line no-console
 });
