@@ -1,0 +1,31 @@
+{
+  "name": "wedding-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikeyshing88/wedding-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikeyshing88/wedding-site/issues"
+  },
+  "homepage": "https://github.com/mikeyshing88/wedding-site#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "concurrently": "^3.5.1",
+    "express": "^4.16.3",
+    "nodemailer": "^4.6.4",
+    "nodemon": "^1.17.3",
+    "prop-types": "^15.6.1"
+  }
+}
