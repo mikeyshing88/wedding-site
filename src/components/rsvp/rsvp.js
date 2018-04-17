@@ -41,7 +41,7 @@ class Rsvp extends Component {
     console.log('flkelkfjdkfjdklj');
     return (
       <div>
-        <form onSubmit={this.handleSubmit} name="yes" data-netlify="true" data-netlify-honeypot="true">
+        <form netlify onSubmit={this.handleSubmit} name="yes" data-netlify="true" data-netlify-honeypot="true">
           <button
             name="Yes"
             type="submit"
