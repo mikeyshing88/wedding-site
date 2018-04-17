@@ -42,6 +42,7 @@ class Rsvp extends Component {
     return (
       <div>
         <form netlify onSubmit={this.handleSubmit} name="yes" data-netlify="true" data-netlify-honeypot="true">
+          <input type="hidden" name="form-name" value="contact" />
           <button
             name="Yes"
             type="submit"
