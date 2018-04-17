@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Button } from 'reactstrap';
+// import { Form, Button } from 'reactstrap';
 
 import './rsvp.scss';
 
@@ -41,24 +41,22 @@ class Rsvp extends Component {
     console.log('flkelkfjdkfjdklj');
     return (
       <div>
-        <Form>
-          <Button
+        <form onSubmit={this.handleSubmit} name="yes" data-netlify="true" data-netlify-honeypot="true">
+          <button
             name="Yes"
-            onClick={this.handleSubmit}
-            data-netlify="true"
-            data-netlify-honeypot="true"
+            type="submit"
           >
             Accept
-          </Button>
-          <Button
+          </button>
+          {/* <button
             name="No"
             onClick={this.handleSubmit}
             data-netlify="true"
             data-netlify-honeypot="true"
           >
             Decline
-          </Button>
-        </Form>
+          </button> */}
+        </form>
       </div>
     );
   }
