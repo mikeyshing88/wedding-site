@@ -66,11 +66,6 @@ class Rsvp extends Component {
     console.log(this.state);
     return (
       <div>
-        {/* <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-          <input type="text" name="name" />
-          <input type="email" name="email" />
-          <textarea name="message"></textarea>
-        </form> */}
         <form netlify name="contact" onSubmit={this.handleSubmit} ondata-netlify="true" data-netlify-honeypot="true">
           <input type="hidden" name="form-name" value="contact" />
           <input type="hidden" name="name" value={this.state.name} />
