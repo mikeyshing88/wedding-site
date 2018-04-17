@@ -1,0 +1,18 @@
+.rsvp-title {
+  &__heading {
+    text-align: center;
+    padding: 0px;
+    margin: 5px 5px;
+    color: #666;
+    font-size: 51px;
+
+    &--handwriting {
+      font-family: 'Great Vibes', cursive;
+      font-weight: 100;
+      font-size: 24px;
+      padding: 30px 0;
+      position: relative;
+      display: block;
+    }
+  }
+}

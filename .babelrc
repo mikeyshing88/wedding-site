@@ -13,20 +13,20 @@
       {
         "root": [
           "./src/"
-        ],
-        "alias": [
-          {
-            // "assets": "./assets",
-            // "common": "./common",
-            // "components": "./components",
-            // "constants": "./constants",
-            // "containers": "./containers",
-            // "helpers": "./helpers",
-            // "pages": "./pages",
-            // "store": "./store",
-            // "utils": "./utils"
-          }
         ]
+        // "alias": [
+        //   {
+        //     "assets": "./assets",
+        //     "common": "./common",
+        //     "components": "./components",
+        //     "constants": "./constants",
+        //     "containers": "./containers",
+        //     "helpers": "./helpers",
+        //     "pages": "./pages",
+        //     "store": "./store",
+        //     "utils": "./utils"
+        //   }
+        // ]
       }
     ]
   ]
