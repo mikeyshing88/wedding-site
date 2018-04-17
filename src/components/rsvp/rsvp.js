@@ -18,8 +18,8 @@ class Rsvp extends Component {
     super(props);
 
     this.state = {
-      guest: 'tt',
-      guestResponse: 'test'
+      name: 'tt',
+      message: 'test'
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,7 +27,7 @@ class Rsvp extends Component {
 
   componentWillMount(props) {
     this.setState({
-      guest: this.props.guest
+      name: this.props.guest
     });
   }
 
@@ -41,7 +41,7 @@ class Rsvp extends Component {
     const response = e.target.name;
 
     this.setState({
-      guestResponse: response
+      message: response
     });
   }
 
@@ -73,8 +73,8 @@ class Rsvp extends Component {
         </form> */}
         <form netlify name="contact" onSubmit={this.handleSubmit} ondata-netlify="true" data-netlify-honeypot="true">
           <input type="hidden" name="form-name" value="contact" />
-          <input type="hidden" name="name" value={this.state.guest} />
-          <input type="hidden" name="message" value={this.state.guestResponse} />
+          <input type="hidden" name="name" value={this.state.name} />
+          <input type="hidden" name="message" value={this.state.message} />
           <button
             name="Yes"
             type="submit"
