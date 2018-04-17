@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 // import { Form, Button } from 'reactstrap';
 
 import './rsvp.scss';
 
 class Rsvp extends Component {
+  static propTypes = {
+    guest: PropTypes.string.isRequired
+  };
+
   static defaultProps = {
     guest: ''
   };
@@ -41,22 +47,24 @@ class Rsvp extends Component {
     console.log('flkelkfjdkfjdklj');
     return (
       <div>
-        <form netlify onSubmit={this.handleSubmit} name="yes" data-netlify="true" data-netlify-honeypot="true">
+        <form netlify data-netlify="true" data-netlify-honeypot="true">
           <input type="hidden" name="form-name" value="contact" />
+          <input type="text" name="name" value={this.props.guest} />
           <button
             name="Yes"
             type="submit"
+            onSubmit={this.handleSubmit}
           >
             Accept
           </button>
-          {/* <button
+          <button
             name="No"
             onClick={this.handleSubmit}
             data-netlify="true"
             data-netlify-honeypot="true"
           >
             Decline
-          </button> */}
+          </button>
         </form>
       </div>
     );
