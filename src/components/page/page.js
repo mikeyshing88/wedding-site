@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import { StickyContainer } from 'react-sticky';
 import { Helmet } from 'react-helmet';
 import isEqual from 'lodash/isEqual';
 import PropTypes from 'prop-types';
 
 import Header from 'components/header/header';
+// import css from './page.scss';
 
 export default class Page extends Component {
   static propTypes = {
     title: PropTypes.string,
-
+    children: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.element,
+      PropTypes.array
+    ]).isRequired,
     header: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.bool
@@ -23,32 +27,22 @@ export default class Page extends Component {
       PropTypes.array,
       PropTypes.element,
       PropTypes.object
-    ])
+    ]),
+    includeHeader: PropTypes.bool.isRequired
   };
 
   static defaultProps = {
     title: 'Shing Wedding',
     header: () => (<Header />),
     before: null,
-    after: null
+    after: null,
+    includeHeader: true
   };
 
   static contextTypes = {
     router: React.PropTypes.object,
     store: React.PropTypes.object
   };
-
-  static scrollToTop = () => {
-    window.scrollTo(0, 0);
-  };
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isModalOpen: false
-    };
-  }
 
   /**
    * Only update if props and/or state have changed
@@ -64,19 +58,13 @@ export default class Page extends Component {
     return true;
   }
 
-  toggleModal() {
-    this.setState({
-      isModalOpen: !this.state.isModalOpen
-    });
-  }
-
   render() {
     return (
-      <StickyContainer>
+      <div>
         <Helmet>
           <title>{this.props.title}</title>
         </Helmet>
-        {this.props.header &&
+        {this.props.header && this.props.includeHeader &&
           this.props.header.call(this, Header)
         }
 
@@ -87,7 +75,11 @@ export default class Page extends Component {
         {this.props.after &&
           this.props.after
         }
-      </StickyContainer>
+
+        {this.props.children &&
+          this.props.children
+        }
+      </div>
     );
   }
 }
