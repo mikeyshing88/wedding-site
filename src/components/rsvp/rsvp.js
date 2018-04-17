@@ -18,8 +18,8 @@ class Rsvp extends Component {
     super(props);
 
     this.state = {
-      guest: '',
-      guestResponse: ''
+      guest: 'tt',
+      guestResponse: 'test'
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -63,6 +63,7 @@ class Rsvp extends Component {
 
   render() {
     console.log('flkelkfjdkfjdklj');
+    console.log(this.state);
     return (
       <div>
         <form netlify onSubmit={this.handleSubmit} ondata-netlify="true" data-netlify-honeypot="true">
