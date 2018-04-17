@@ -38,6 +38,7 @@ class Rsvp extends Component {
   };
 
   render() {
+    console.log('flkelkfjdkfjdklj');
     return (
       <div>
         <Form>
