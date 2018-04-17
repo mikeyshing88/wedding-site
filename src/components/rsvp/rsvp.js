@@ -17,7 +17,18 @@ class Rsvp extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      guest: '',
+      guestResponse: ''
+    };
+
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillMount(props) {
+    this.setState({
+      guest: this.props.guest
+    });
   }
 
   encode = (data) => {
@@ -26,15 +37,22 @@ class Rsvp extends Component {
       .join('&');
   }
 
-  handleSubmit = (e) => {
+  handleChange = (e) => {
     const response = e.target.name;
+
+    this.setState({
+      guestResponse: response
+    });
+  }
+
+  handleSubmit = (e) => {
 
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: this.encode({
         'form-name': 'contact',
-        response
+        ...this.state
       })
     })
       .then(() => console.log('Success!'))
@@ -47,21 +65,21 @@ class Rsvp extends Component {
     console.log('flkelkfjdkfjdklj');
     return (
       <div>
-        <form netlify data-netlify="true" data-netlify-honeypot="true">
+        <form netlify onSubmit={this.handleSubmit} ondata-netlify="true" data-netlify-honeypot="true">
           <input type="hidden" name="form-name" value="contact" />
-          <input type="text" name="name" value={this.props.guest} />
+          <input type="hidden" name="name" value={this.state.guest} />
+          <input type="hidden" name="message" value={this.state.guestResponse} />
           <button
             name="Yes"
             type="submit"
-            onSubmit={this.handleSubmit}
+            onClick={this.handleChange}
           >
             Accept
           </button>
           <button
             name="No"
-            onClick={this.handleSubmit}
-            data-netlify="true"
-            data-netlify-honeypot="true"
+            onClick={this.handleChange}
+            type="submit"
           >
             Decline
           </button>
