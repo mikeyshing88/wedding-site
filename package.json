@@ -10,7 +10,7 @@
     "start": "node build-tools/scripts/start.js",
     "build": "node build-tools/scripts/build.js",
     "debug": "node build-tools/scripts/debug.js",
-    "prod:build:fetch": "npm run build && npm run babel:build:routes",
+    "prod:build:fetch": "npm run babel:build:routes",
     "babel:build:routes": "BABEL_ENV=production babel-node build-tools/scripts/create-routes.js",
     "install:custom-eslint": "npm install --save-dev ./build-tools/eslint-rules",
     "lint:sass": "sass-lint -c .sass-lint.yml -v -q -i 'src/styles/external/**/*.scss'"
@@ -60,6 +60,7 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "react-sticky": "^6.0.1",
     "react-transition-group": "^1.2.0",
+    "reactstrap": "^5.0.0-beta.3",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0",
