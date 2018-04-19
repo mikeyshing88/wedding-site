@@ -15,8 +15,15 @@
   transform: translate(-50%,-50%);
 
   &__floral {
-    width: 40vw;
+    width: 200px;
     position: absolute;
+
+    @media screen and (min-width: 767px) {
+      width: 300px;
+    }
+    @media screen and (min-width: 980px) {
+      width: 400px;
+    }
 
     &--top {
       top: 0;
@@ -38,9 +45,10 @@
   &__content {
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(0, 46%);
-    -ms-transform: translate(0, 46%);
-    transform: translate(0, 46%);
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
 
   // &__curly-brace {
