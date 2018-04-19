@@ -309,7 +309,7 @@ module.exports = {
         // Real path
         from: 'src/assets/',
         // Virtual dev URL
-        to: 'products/assets/'
+        to: 'assets/'
       }
     ])
   ],
