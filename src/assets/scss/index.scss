@@ -14,6 +14,16 @@ body {
   padding: 0;
 
   &.rsvp-page {
-    background-color: #fcc0b5;
+    background: #fcc0b578 url('/assets/img/rsvp/flowers.png') no-repeat -109px -88px/73%;
+    height: 100vh;
+
+    @media screen and (max-width: 991px) {
+      background-position: -239px -246px;
+      background-size: cover;
+      background-repeat: repeat;
+    }
+    @media screen and (max-width: 767px) {
+      background-position: 12% -156px;
+    }
   }
 }

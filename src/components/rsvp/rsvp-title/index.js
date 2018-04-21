@@ -6,11 +6,15 @@ class RsvpTitle extends Component {
   render() {
     return (
       <div className={css.rsvpTitle}>
-        <h1 className={css.rsvpTitleRsvpHandwriting}>
+        <h1 className={css.rsvpTitleHeadingHandwriting}>
           RSVP
         </h1>
-        <h2>for the wedding</h2>
-        <h2>Michael & Helen</h2>
+        <h2 className={css.rsvpTitleSubHeadingHandwriting}>
+          for the wedding of
+        </h2>
+        <h2 className={css.rsvpTitleName}>
+          Michael <span>&</span> Helen
+        </h2>
       </div>
     );
   }
