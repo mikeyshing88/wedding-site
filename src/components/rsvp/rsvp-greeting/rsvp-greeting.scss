@@ -1,0 +1,52 @@
+.rsvp-greeting {
+  &__hello {
+    font-weight: 100;
+    margin-right: 50%;
+    margin-bottom: 0;
+    font-size: 18px;
+
+    @media screen and (max-width: 767px) {
+      font-size: 12px;
+    }
+  }
+
+  &__name {
+    font-weight: 100;
+    margin-top: 5px;
+    letter-spacing: 3px;
+    font-size: 28px;
+    margin-bottom: 15px;
+
+    @media screen and (max-width: 767px) {
+      font-size: 18px;
+    }
+  }
+
+  &__desc {
+    font-size: 14px;
+    font-weight: 100;
+    letter-spacing: 1.2px;
+    margin: 0 auto 30px;
+    width: 40vw;
+
+    @media screen and (max-width: 767px) {
+      width: 80vw;
+      font-size: 12px;
+    }
+  }
+
+  &__button {
+    font-size: 14px;
+    text-transform: capitalize;
+    background: #fcc0b578;
+    color: #666;
+    padding: 5px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0 2px;
+
+    &:hover {
+      background: #fcc0b5c2;
+    }
+  }
+}

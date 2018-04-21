@@ -1,15 +1,19 @@
 
 {
+  "test": {
+    "name": "Test family",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu"
+  },
   "maragh": {
-    "intro": "Greetings the Maragh's!",
+    "name": "Greetings the Maragh's!",
     "desc": "We would be delighted to invite you to our wedding ceremony on 27th August 2019"
   },
   "pang": {
-    "intro": "Hello the Pang family!!",
+    "name": "The Pang Family",
     "desc": "We would love to invite you to"
   },
   "nikolic": {
-    "intro": "Go fuck yourself",
+    "name": "Go fuck yourself",
     "desc": "Deliveroo fucker"
   }
 }

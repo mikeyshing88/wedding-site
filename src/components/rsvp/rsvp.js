@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import RsvpForm from './rsvp-form';
 import RsvpTitle from './rsvp-title';
+import RsvpGreeting from './rsvp-greeting';
 
 import getQueryString from '../../utils/_get-query-string';
 import guestsRawData from '../../assets/json/guestData.json';
@@ -31,30 +32,18 @@ class Rsvp extends Component {
   render() {
     const { guest } = this.state;
     const guestData = guestsRawData[guest];
-    const { intro, desc } = guestData;
+    const { name, desc } = guestData;
 
     return (
       <div className={css.rsvp}>
-        {/* <div className={css.rsvpCurlyBrace}>
-          <div className={`${css.rsvpBrace} ${css.rsvpBraceLeft}`} />
-          <div className={`${css.rsvpBrace} ${css.rsvpBraceRight}`} />
-        </div> */}
-        <img
-          src="/assets/img/rsvp/floral-top.png"
-          className={`${css.rsvpFloral} ${css.rsvpFloralTop}`}
-          alt="flower"
-        />
         <div className={css.rsvpContent}>
           <RsvpTitle />
-          <h1>{intro}</h1>
-          <h2>{desc}</h2>
-          <RsvpForm guest={guest} />
+          <RsvpGreeting
+            name={name}
+            desc={desc}
+          />
+          {/* <RsvpForm guest={guest} /> */}
         </div>
-        <img
-          src="/assets/img/rsvp/floral-bottom.png"
-          className={`${css.rsvpFloral} ${css.rsvpFloralBottom}`}
-          alt="flower"
-        />
       </div>
     );
   }

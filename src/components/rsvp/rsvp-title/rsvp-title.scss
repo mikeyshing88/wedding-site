@@ -1,17 +1,56 @@
 .rsvp-title {
   text-align: center;
-  padding: 0px;
-  margin: 5px 5px;
+  padding: 20px 0;
   color: #666;
-  font-family: 'Great Vibes', cursive;
+  border-top: 1px dashed black;
+  border-bottom: 1px dashed black;
 
-  &__rsvp {
+  &__heading {
     &--handwriting {
       font-family: 'scriptin', cursive;
       font-weight: 300;
-      font-size: 51px;
-      margin: -50px 0 0;
-      line-height: 1.3em;
+      font-size: 36px;
+      margin: 0;
+      line-height: 1em;
+
+      @media screen and (max-width: 767px) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__sub-heading {
+    &--handwriting {
+      font-family: 'scriptin', cursive;
+      font-weight: 300;
+      font-size: 18px;
+      margin: 10px 0 0;
+
+      @media screen and (max-width: 767px) {
+        font-size: 14pxl
+      }
+    }
+  }
+
+  &__name {
+    font-size: 40px;
+    font-family: proxima-nova,Helvetica Neue,sans-serif;
+    margin: 10px 0 0;
+    font-weight: 400;
+    letter-spacing: 3px;
+    line-height: 1em;
+
+    @media screen and (max-width: 767px) {
+      font-size: 26px;
+    }
+
+    span {
+      font-family: 'scriptin', cursive;
+      font-size: 24px;
+
+      @media screen and (max-width: 767px) {
+        font-size: 16px;
+      }
     }
   }
 }
