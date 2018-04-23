@@ -35,6 +35,10 @@
     &--two {
       width: 95%;
       height: 95%;
+
+      @media screen and (min-width: 1399px) {
+        height: 94%;
+      }
     }
   }
 
