@@ -23,8 +23,11 @@ class RsvpGreeting extends Component {
         <h2 className={css.rsvpGreetingDesc}>
           {desc}
         </h2>
+        <p className={css.rsvpGreetingSignature}>
+          Michael & Helen
+        </p>
         <button className={css.rsvpGreetingButton}>
-          RSVP
+          Click to RSVP
         </button>
       </div>
     );

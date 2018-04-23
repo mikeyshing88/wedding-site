@@ -14,12 +14,6 @@ class RsvpTitle extends Component {
         <h1 className={css.rsvpTitleHeadingHandwriting}>
           Invitation
         </h1>
-        {/* <h2 className={css.rsvpTitleSubHeadingHandwriting}>
-          for the wedding of
-        </h2> */}
-        {/* <h2 className={css.rsvpTitleName}>
-          Michael <span>&</span> Helen
-        </h2> */}
       </div>
     );
   }

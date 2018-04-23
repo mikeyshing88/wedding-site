@@ -11,47 +11,16 @@
       line-height: 1em;
 
       @media screen and (max-width: 767px) {
-        font-size: 24px;
-      }
-    }
-  }
-
-  &__sub-heading {
-    &--handwriting {
-      font-family: 'scriptin', cursive;
-      font-weight: 300;
-      font-size: 18px;
-      margin: 10px 0 0;
-
-      @media screen and (max-width: 767px) {
-        font-size: 14pxl
+        font-size: 30px;
       }
     }
   }
 
   &__bouquet {
     width: 130px;
-  }
-
-  &__name {
-    font-size: 40px;
-    font-family: proxima-nova,Helvetica Neue,sans-serif;
-    margin: 10px 0 0;
-    font-weight: 400;
-    letter-spacing: 3px;
-    line-height: 1em;
 
     @media screen and (max-width: 767px) {
-      font-size: 26px;
-    }
-
-    span {
-      font-family: 'alsscrp', cursive;
-      font-size: 24px;
-
-      @media screen and (max-width: 767px) {
-        font-size: 16px;
-      }
+      width: 100px;
     }
   }
 }
