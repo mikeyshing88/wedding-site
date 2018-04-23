@@ -12,7 +12,6 @@ class RsvpView extends Component {
         title="Shing Wedding | RSVP"
         includeHeader={header}
       >
-        <div />
         <Rsvp />
       </Page>
     );
