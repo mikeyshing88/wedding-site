@@ -1,16 +1,13 @@
 .rsvp-title {
   text-align: center;
-  padding: 20px 0;
   color: #666;
-  border-top: 1px dashed black;
-  border-bottom: 1px dashed black;
 
   &__heading {
     &--handwriting {
-      font-family: 'scriptin', cursive;
+      font-family: 'alsscrp', cursive;
       font-weight: 300;
-      font-size: 36px;
-      margin: 0;
+      font-size: 46px;
+      margin: 20px 0 0;
       line-height: 1em;
 
       @media screen and (max-width: 767px) {
@@ -32,6 +29,10 @@
     }
   }
 
+  &__bouquet {
+    width: 130px;
+  }
+
   &__name {
     font-size: 40px;
     font-family: proxima-nova,Helvetica Neue,sans-serif;
@@ -45,7 +46,7 @@
     }
 
     span {
-      font-family: 'scriptin', cursive;
+      font-family: 'alsscrp', cursive;
       font-size: 24px;
 
       @media screen and (max-width: 767px) {

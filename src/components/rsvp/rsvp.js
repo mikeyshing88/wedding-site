@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import RsvpForm from './rsvp-form';
+// import RsvpForm from './rsvp-form';
 import RsvpTitle from './rsvp-title';
 import RsvpGreeting from './rsvp-greeting';
 
@@ -36,6 +36,8 @@ class Rsvp extends Component {
 
     return (
       <div className={css.rsvp}>
+        <div className={`${css.rsvpFrame} ${css.rsvpFrameOne}`} />
+        <div className={`${css.rsvpFrame} ${css.rsvpFrameTwo}`} />
         <div className={css.rsvpContent}>
           <RsvpTitle />
           <RsvpGreeting

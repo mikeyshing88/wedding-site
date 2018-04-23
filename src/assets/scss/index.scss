@@ -8,22 +8,23 @@
   src: url('/assets/fonts/scriptin.ttf');
 }
 
+@font-face {
+  font-family: 'alsscrp';
+  src: url('/assets/fonts/alsscrp.ttf');
+}
+
+@font-face {
+  font-family: 'butler_medium';
+  src: url('/assets/fonts/Butler_Medium.otf');
+}
+
 /*----------  Generic styles  ----------*/
 body {
   margin: 0;
   padding: 0;
 
   &.rsvp-page {
-    background: #fcc0b578 url('/assets/img/rsvp/flowers.png') no-repeat -109px -88px/73%;
+    background: #f7cab7;
     height: 100vh;
-
-    @media screen and (max-width: 991px) {
-      background-position: -239px -246px;
-      background-size: cover;
-      background-repeat: repeat;
-    }
-    @media screen and (max-width: 767px) {
-      background-position: 12% -156px;
-    }
   }
 }

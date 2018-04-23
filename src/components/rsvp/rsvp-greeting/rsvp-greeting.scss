@@ -13,9 +13,10 @@
   &__name {
     font-weight: 100;
     margin-top: 5px;
-    letter-spacing: 3px;
-    font-size: 28px;
-    margin-bottom: 15px;
+    color: #666;
+    margin: 50px 0 15px;
+    font-size: 18px;
+    font-family: 'butler_medium';
 
     @media screen and (max-width: 767px) {
       font-size: 18px;
@@ -23,11 +24,12 @@
   }
 
   &__desc {
-    font-size: 14px;
+    font-size: 12px;
+    color: #666;
+    font-family: 'butler_medium';
     font-weight: 100;
-    letter-spacing: 1.2px;
     margin: 0 auto 30px;
-    width: 40vw;
+    width: 55vw;
 
     @media screen and (max-width: 767px) {
       width: 80vw;

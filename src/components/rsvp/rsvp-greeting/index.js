@@ -14,11 +14,11 @@ class RsvpGreeting extends Component {
 
     return (
       <div>
-        <h3 className={css.rsvpGreetingHello}>
+        {/* <h3 className={css.rsvpGreetingHello}>
           Dear,
-        </h3>
+        </h3> */}
         <h3 className={css.rsvpGreetingName}>
-          {name}
+          To: {name}
         </h3>
         <h2 className={css.rsvpGreetingDesc}>
           {desc}
