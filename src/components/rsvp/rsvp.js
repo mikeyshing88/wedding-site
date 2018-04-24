@@ -38,11 +38,11 @@ class Rsvp extends Component {
       <div className={css.rsvp}>
         <div className={`${css.rsvpFrame} ${css.rsvpFrameOne}`} />
         <div className={`${css.rsvpFrame} ${css.rsvpFrameTwo}`} />
-        <img
+        {/* <img
           src="/assets/img/rsvp/flower-top-right.png"
           className={css.rsvpTopBorder}
           alt=""
-        />
+        /> */}
         {/* <img
           src="/assets/img/rsvp/flower-top-right.png"
           className={css.rsvpBottomBorder}

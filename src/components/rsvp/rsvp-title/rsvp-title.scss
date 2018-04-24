@@ -3,16 +3,14 @@
   color: #666;
 
   &__heading {
-    &--handwriting {
-      font-family: 'alsscrp', cursive;
-      font-weight: 300;
-      font-size: 46px;
-      margin: 20px 0 0;
-      line-height: 1em;
+    font-weight: 100;
+    font-size: 46px;
+    margin: 20px 0 0;
+    line-height: 1em;
+    font-family: 'butler_light';
 
-      @media screen and (max-width: 767px) {
-        font-size: 30px;
-      }
+    @media screen and (max-width: 767px) {
+      font-size: 30px;
     }
   }
 

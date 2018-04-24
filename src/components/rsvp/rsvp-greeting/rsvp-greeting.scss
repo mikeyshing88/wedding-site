@@ -55,9 +55,10 @@
   }
 
   &__signature {
-    font-family: 'alsscrp', cursive;
     margin-bottom: 25px;
     color: #666;
+    font-weight: 100;
+    font-size: .7rem;
 
     @media screen and (max-width: 767px) {
       margin: 15px 0;
