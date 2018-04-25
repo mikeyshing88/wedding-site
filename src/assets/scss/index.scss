@@ -29,7 +29,19 @@ body {
   padding: 0;
 
   &.rsvp-page {
-    background: #f7cab7;
-    height: 100vh;
+    background: #faddcc;
+    font-family: sans-serif;
+  }
+}
+
+@keyframes point {
+  0% {
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
   }
 }
