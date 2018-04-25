@@ -1,0 +1,42 @@
+.rsvp-hero {
+  position: absolute;
+  bottom: 17%;
+  left: 11%;
+  color: rgba(102, 102, 102, 0.7);
+
+  &__name {
+    font-weight: 100;
+    font-size: 50px;
+    width: 52%;
+    margin: 0 0 20px;
+    letter-spacing: 3px;
+
+    @media screen and (max-width: 767px) {
+      width: 70%;
+    }
+  }
+
+  &__greeting {
+    font-weight: 100;
+    font-size: 18px;
+    letter-spacing: 3px;
+    width: 90%;
+    margin: 0;
+  }
+
+  svg {
+    position: absolute;
+    right: 20px;
+    bottom: -70px;
+
+    @media screen and (min-width: 767px) {
+      display: none;
+    }
+  }
+
+  :global {
+    svg {
+      animation: point 1s linear infinite alternate;
+    }
+  }
+}

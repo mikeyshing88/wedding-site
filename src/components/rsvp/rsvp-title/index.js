@@ -11,9 +11,6 @@ class RsvpTitle extends Component {
           className={css.rsvpTitleBouquet}
           alt="Bouquet"
         />
-        <h1 className={css.rsvpTitleHeading}>
-          Invitation
-        </h1>
       </div>
     );
   }
