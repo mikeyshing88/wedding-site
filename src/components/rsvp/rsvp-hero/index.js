@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Ionicon from 'react-ionicons'
+import Ionicon from 'react-ionicons';
 // import PropTypes from 'prop-types';
 
 import css from './rsvp-hero.scss';
