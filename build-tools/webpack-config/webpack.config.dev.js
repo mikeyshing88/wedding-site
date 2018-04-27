@@ -195,6 +195,33 @@ module.exports = {
           cacheDirectory: true
         }
       },
+      {
+        test: /index.scss$/,
+        loader: ExtractTextPlugin.extract(
+          {
+            fallback: require.resolve('style-loader'),
+            publicPath,
+            use: [
+              {
+                loader: 'css-loader',
+                options: {
+                  camelCase: true,
+                  sourceMap: true,
+                  importLoaders: 2
+                }
+              },
+              postCssConfig,
+              require.resolve('resolve-url-loader'),
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: false
+                }
+              }
+            ]
+          }
+        )
+      },
       // "postcss" loader applies autoprefixer to our CSS.
       // "css" loader resolves paths in CSS and adds assets as dependencies.
       // "style" loader turns CSS into JS modules that inject <style> tags.
@@ -212,7 +239,7 @@ module.exports = {
                 loader: 'css-loader',
                 options: {
                   modules: true,
-                  import: false,
+                  import: true,
                   camelCase: true,
                   sourceMap: true,
                   importLoaders: 2,
@@ -220,34 +247,6 @@ module.exports = {
                 }
               },
               postCssConfig,
-              {
-                loader: 'sass-loader',
-                options: {
-                  sourceMap: false
-                }
-              }
-            ]
-          }
-        )
-      },
-      {
-        test: /index.scss$/,
-        loader: ExtractTextPlugin.extract(
-          {
-            fallback: require.resolve('style-loader'),
-            publicPath,
-            use: [
-              {
-                loader: 'css-loader',
-                options: {
-                  camelCase: true,
-                  sourceMap: true,
-                  importLoaders: 2,
-                  localIdentName: '[name]__[local]--[hash:base64:5]'
-                }
-              },
-              postCssConfig,
-              require.resolve('resolve-url-loader'),
               {
                 loader: 'sass-loader',
                 options: {
