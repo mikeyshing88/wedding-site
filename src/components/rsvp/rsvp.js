@@ -49,6 +49,7 @@ class Rsvp extends Component {
             slidesToScroll: 1,
             vertical: true,
             verticalSwiping: true,
+            swipeToSlide: true
           }
         }
       ]
