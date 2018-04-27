@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Ionicon from 'react-ionicons'
+import Ionicon from 'react-ionicons';
 // import PropTypes from 'prop-types';
 
 import css from './rsvp-hero.scss';
@@ -19,7 +19,7 @@ class RsvpHero extends Component {
           <h1 className={css.rsvpHeroName}>
             Michael & Helen
           </h1>
-          <h2 className={css.rsvpHeroGreeting}>
+          <h2 className={`col-xs-8 ${css.rsvpHeroGreeting}`}>
             {`We hope that you can join us on our special day
           to celebrate our wedding`}
           </h2>

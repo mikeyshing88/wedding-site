@@ -4,6 +4,10 @@
   left: 11%;
   color: rgba(102, 102, 102, 0.7);
 
+  @media screen and (max-width: 767px) {
+    bottom: 22%;
+  }
+
   &__name {
     font-weight: 100;
     font-size: 50px;
@@ -20,7 +24,7 @@
     font-weight: 100;
     font-size: 18px;
     letter-spacing: 3px;
-    width: 90%;
+    padding: 0;
     margin: 0;
   }
 

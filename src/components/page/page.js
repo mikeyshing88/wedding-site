@@ -4,7 +4,6 @@ import isEqual from 'lodash/isEqual';
 import PropTypes from 'prop-types';
 
 import Header from 'components/header/header';
-// import css from './page.scss';
 
 export default class Page extends Component {
   static propTypes = {

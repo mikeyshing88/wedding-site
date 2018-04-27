@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-
+import Slider from 'react-slick';
 // import RsvpForm from './rsvp-form';
 import RsvpTitle from './rsvp-title';
 import RsvpGreeting from './rsvp-greeting';
 import RsvpHero from './rsvp-hero';
-
 
 import getQueryString from '../../utils/_get-query-string';
 import guestsRawData from '../../assets/json/guestData.json';
@@ -36,7 +35,26 @@ class Rsvp extends Component {
     const guestData = guestsRawData[guest];
     const { name, desc } = guestData;
 
-    console.log(name, desc);
+    const settings = {
+      responsive: [
+        {
+          breakpoint: 10000,
+          settings: 'unslick'
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            vertical: true,
+            verticalSwiping: true,
+            swipeToSlide: true
+          }
+        }
+      ]
+    };
+
     return (
       <div className={css.rsvp}>
         {/* <div className={`${css.rsvpFrame} ${css.rsvpFrameOne}`} /> */}
@@ -51,17 +69,25 @@ class Rsvp extends Component {
           className={css.rsvpBottomBorder}
           alt=""
         /> */}
-        <div className={css.rsvpHero}>
-          <RsvpHero />
-        </div>
-        <div className={css.rsvpContent}>
-          <RsvpTitle />
-          <RsvpGreeting
-            name={name}
-            desc={desc}
-          />
-          {/* <RsvpForm guest={guest} /> */}
-        </div>
+        <Slider {...settings}>
+          <div>
+            <div className={css.rsvpHero}>
+              <RsvpHero />
+            </div>
+          </div>
+          <div>
+            <div className={css.rsvpContent}>
+              <RsvpTitle />
+              <RsvpGreeting
+                name={name}
+                desc={desc}
+              />
+              {/* <RsvpForm guest={guest} /> */}
+            </div>
+          </div>
+
+        </Slider>
+
       </div>
     );
   }
