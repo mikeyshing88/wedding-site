@@ -31,13 +31,17 @@
   }
 
   &__fade {
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-    -moz-transition: opacity 1.5s ease-in-out;
-    -webkit-transition: opacity 1.5s ease-in-out;
+    @media screen and (max-width: 767px) {
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      -moz-transition: opacity 1.5s ease-in-out;
+      -webkit-transition: opacity 1.5s ease-in-out;
+    }
 
     &--active {
-      opacity: 1;
+      @media screen and (max-width: 767px) {
+        opacity: 1;
+      }
     }
   }
 }
