@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import cx from 'classnames';
+import Sensor from 'react-visibility-sensor';
 
 // import RsvpForm from './rsvp-form';
 import RsvpTitle from './rsvp-title';
@@ -55,12 +57,23 @@ class Rsvp extends Component {
           <RsvpHero />
         </div>
         <div className={css.rsvpContent}>
-          <RsvpTitle />
-          <RsvpGreeting
-            name={name}
-            desc={desc}
-          />
-          {/* <RsvpForm guest={guest} /> */}
+          <Sensor partialVisibility>
+            {({ isVisible }) => (
+              <div
+                className={cx(
+                  css.rsvpFade,
+                  isVisible ? css.rsvpFadeActive : ''
+                )}
+              >
+                <RsvpTitle />
+                <RsvpGreeting
+                  name={name}
+                  desc={desc}
+                />
+                {/* <RsvpForm guest={guest} /> */}
+              </div>
+            )}
+          </Sensor>
         </div>
       </div>
     );
