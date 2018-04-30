@@ -29,4 +29,19 @@
       width: 100%;
     }
   }
+
+  &__fade {
+    @media screen and (max-width: 767px) {
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      -moz-transition: opacity 1.5s ease-in-out;
+      -webkit-transition: opacity 1.5s ease-in-out;
+    }
+
+    &--active {
+      @media screen and (max-width: 767px) {
+        opacity: 1;
+      }
+    }
+  }
 }
