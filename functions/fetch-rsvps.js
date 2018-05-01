@@ -18,7 +18,7 @@ exports.handler = function (event, context, callback) {
   // const apiUrl = `${baseApiUrl}/${siteId}/${apiQuery}${token}`;
 
   const apiOptions = Object.assign({}, options, {
-    path: `/api/v1/sites/${siteId}/submissions?access_token=?${token}`
+    path: `/api/v1/sites/${siteId}/submissions?access_token=${token}`
   });
 
   const req = https.request(apiOptions, (res) => {

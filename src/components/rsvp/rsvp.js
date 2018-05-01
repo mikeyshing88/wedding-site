@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 import Sensor from 'react-visibility-sensor';
 
-// import RsvpForm from './rsvp-form';
+import RsvpForm from './rsvp-form';
 import RsvpTitle from './rsvp-title';
 import RsvpGreeting from './rsvp-greeting';
 import RsvpHero from './rsvp-hero';
@@ -70,7 +70,7 @@ class Rsvp extends Component {
                   name={name}
                   desc={desc}
                 />
-                {/* <RsvpForm guest={guest} /> */}
+                <RsvpForm guest={guest} />
               </div>
             )}
           </Sensor>
