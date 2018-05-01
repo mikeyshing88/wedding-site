@@ -26,24 +26,24 @@ exports.handler = function (event, context, callback) {
     res.setEncoding('utf8');
     let body = '';
 
-    res.on('data', (data) => {
-      console.log(data, 'flkdsjfldjfkldj');
+    res.on('data', data => {
       body += data;
     });
 
-    res.on('end', () => {
-      body = JSON.parse(body);
+    console.log(body, 'glfdlgfdlgkflg');
 
-      console.log(body, 'kldjfklgjfdklgfdk');
-      callback(null, {
-        statusCode: 200,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json'
-        },
-        body
-      });
-    });
+    // res.on('end', () => {
+    //   body = JSON.parse(body);
+
+    //   callback(null, {
+    //     statusCode: 200,
+    //     headers: {
+    //       'Access-Control-Allow-Origin': '*',
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body
+    //   });
+    // });
   });
 
   req.end();
