@@ -7,9 +7,9 @@ class RsvpView extends Component {
   componentDidMount() {
     const NETLIFY_FUNC = 'shingsquadwedding.netlify.com/.netlify/functions/fetch-rsvps';
     fetch(`https://${NETLIFY_FUNC}`)
-      .then(x => x.json())
-      .then(x => {
-        this.setState({ subs: x });
+      .then((res) => {
+        console.log(res, 'fkldjlkfdjlkf');
+        this.setState({ subs: res });
       });
   }
 
