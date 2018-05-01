@@ -34,7 +34,7 @@ exports.handler = function (event, context, callback) {
           'Access-Control-Allow-Origin': '*',
           'Content-Type': 'application/json'
         },
-        body: JSON.parse(data)
+        body: data
       });
       // body += data;
     });
