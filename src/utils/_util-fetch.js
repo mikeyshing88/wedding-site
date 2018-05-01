@@ -22,5 +22,12 @@ function checkStatus(response) {
  * @param {string} path File path or URL
  */
 export default function utilFetch(path) {
-  return fetch(path, { credentials: 'same-origin' }).then(checkStatus);
+  return fetch(path, { credentials: 'same-origin' })
+    .then(checkStatus)
+    .then((res) => {
+      return res.json();
+    }).catch((error) => {
+      /* eslint no-console: 0 */
+      console.error('error', error);
+    });
 }
