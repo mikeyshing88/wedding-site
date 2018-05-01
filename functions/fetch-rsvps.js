@@ -8,7 +8,7 @@ exports.handler = function (event, context, callback) {
 
   const apiUrl = `${baseApiUrl}/${siteId}/${apiQuery}${token}`;
 
-  console.log(apiUrl, API);
+  console.log(apiUrl, 'API');
 
   const options = {
     hostname: 'api.netlify.com',
@@ -34,7 +34,7 @@ exports.handler = function (event, context, callback) {
 
     res.on('end', () => {
       body = JSON.parse(body);
-      console.log(body, BODY RESSS);
+      console.log(body, 'BODY RESSS');
     });
   });
 
