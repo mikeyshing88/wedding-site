@@ -23,18 +23,14 @@ exports.handler = function (event, context, callback) {
     { path: apiUrl }
   );
 
-  const req = https.request(objectApi, (res) => {
-    console.log(res, 'UNNNN RES');
-    res.setEncoding('utf8');
-    let body = '';
+  const req = https.request(objectApi, (response) => {
+    response.setEncoding('utf8');
+    console.log(response, 'UNNNN response');
 
-    res.on('data', data => {
-      body += data;
-    });
+    console.log(response.res, 'fldsjfldjfk');
 
-    res.on('end', () => {
-      body = JSON.parse(body);
-      console.log(body, 'BODY RESSS');
+    response.on('data', (d) => {
+      console.log(d, 'glkjglkfjglkfj');
     });
   });
 
