@@ -6,7 +6,7 @@ import Rsvp from '../../components/rsvp/rsvp';
 class RsvpView extends Component {
   render() {
     const header = false;
-
+    console.log(process.env);
     return (
       <Page
         title="Shing Wedding | RSVP"
