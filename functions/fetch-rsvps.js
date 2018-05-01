@@ -6,16 +6,14 @@ exports.handler = function (event, context, callback) {
 
   const apiUrl = `${baseApiUrl}/${siteId}/${apiQuery}${token}`;
   console.log(apiUrl);
-  const api = {
-    url: apiUrl
-  };
+
   callback(null, {
     statusCode: 200,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json'
     },
-    body: api
+    body: apiUrl
   });
   // return apiUrl;
 };
