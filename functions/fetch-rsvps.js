@@ -27,6 +27,7 @@ exports.handler = function (event, context, callback) {
     let body = '';
 
     res.on('data', data => {
+      console.log(data, 'fkdjflkdjfkldkjdf');
       body += data;
     });
 
