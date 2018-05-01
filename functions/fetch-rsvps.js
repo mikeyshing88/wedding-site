@@ -1,4 +1,4 @@
-import 'whatwg-fetch';
+const https = require('https');
 
 exports.handler = function (event, context, callback) {
   const token = process.env.NETLIFY_KEY;
@@ -8,23 +8,35 @@ exports.handler = function (event, context, callback) {
 
   const apiUrl = `${baseApiUrl}/${siteId}/${apiQuery}${token}`;
 
-  function checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
+  console.log(apiUrl, API);
+
+  const options = {
+    hostname: 'api.netlify.com',
+    port: 443,
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
     }
+  };
 
-    const error = new Error(response.statusText);
-    error.response = response;
+  const objectApi = Object.assign({}, options,
+    { path: apiUrl }
+  );
 
-    throw error;
-  }
+  const req = https.request(objectApi, (res) => {
+    console.log(res, 'UNNNN RES');
+    res.setEncoding('utf8');
+    let body = '';
 
-  return fetch(apiUrl, { credentials: 'same-origin' })
-    .then(checkStatus)
-    .then((res) => {
-      return res.json();
-    }).catch((error) => {
-      /* eslint no-console: 0 */
-      console.error('error', error);
+    res.on('data', data => {
+      body += data;
     });
+
+    res.on('end', () => {
+      body = JSON.parse(body);
+      console.log(body, BODY RESSS);
+    });
+  });
+
+  req.end();
 };
