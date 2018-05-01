@@ -24,14 +24,22 @@ exports.handler = function (event, context, callback) {
   const req = https.request(apiOptions, (res) => {
     console.log(res, 'fldsjfldjkdjs');
     res.setEncoding('utf8');
-    let body = '';
+    // let body = '';
 
     res.on('data', data => {
       console.log(data, 'fkdjflkdjfkldkjdf');
-      body += data;
+      callback(null, {
+        statusCode: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.parse(data)
+      });
+      // body += data;
     });
 
-    console.log(body, 'glfdlgfdlgkflg');
+    // console.log(body, 'glfdlgfdlgkflg');
 
     // res.on('end', () => {
     //   body = JSON.parse(body);
