@@ -26,7 +26,7 @@ export default function utilFetch(path) {
     .then(checkStatus)
     .then((res) => {
       console.log(res, 'fkdjfk');
-      return res.json();
+      return res.text();
     }).catch((error) => {
       /* eslint no-console: 0 */
       console.error('error', error);
