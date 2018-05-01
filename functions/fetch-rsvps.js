@@ -1,3 +1,5 @@
+require('whatwg-fetch');
+
 exports.handler = function (event, context, callback) {
   const token = process.env.NETLIFY_KEY;
   const siteId = process.env.SITE_ID;
