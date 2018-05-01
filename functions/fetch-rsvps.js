@@ -1,4 +1,4 @@
-const https = require('https');
+const fetch = require('node-fetch');
 
 exports.handler = function (event, context, callback) {
   const token = process.env.NETLIFY_KEY;
@@ -10,29 +10,25 @@ exports.handler = function (event, context, callback) {
 
   console.log(apiUrl, 'API');
 
-  const options = {
-    hostname: 'api.netlify.com',
-    port: 443,
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  };
-
-  const objectApi = Object.assign({}, options,
-    { path: apiUrl }
-  );
-
-  const req = https.request(objectApi, (response) => {
-    response.setEncoding('utf8');
-    console.log(response, 'UNNNN response');
-
-    console.log(response.res, 'fldsjfldjfk');
-
-    response.on('data', (d) => {
-      console.log(d, 'glkjglkfjglkfj');
+  if (event.httpMethod !== 'POST') {
+    return callback(null, {
+      statusCode: 410,
+      body: 'Unsupported Request Method'
     });
-  });
-
-  req.end();
+  }
+  try {
+    const payload = JSON.parse(event.body);
+    console.log(payload, 'PAYLOAD');
+    fetch(apiUrl, {
+      method: 'POST',
+      body: JSON.stringify({ text: payload.text })
+    }).then((res) => {
+      console.log(res, 'fldjfkdjflj');
+      callback(null, { statusCode: 204 });
+    }).catch((e) => {
+      callback(null, { statusCode: 500, body: `Internal Server Error: ${e}` });
+    });
+  } catch (e) {
+    callback(null, { statusCode: 500, body: `Internal Server Error: ${e}` });
+  }
 };
