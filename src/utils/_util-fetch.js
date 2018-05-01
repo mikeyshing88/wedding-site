@@ -22,13 +22,7 @@ function checkStatus(response) {
  * @param {string} path File path or URL
  */
 export default function utilFetch(path) {
-  return fetch(path, {
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json'
-    }
-  })
+  return fetch(path, { credentials: 'same-origin' })
     .then(checkStatus)
     .then((res) => {
       console.log(res, 'fkdjfk');
