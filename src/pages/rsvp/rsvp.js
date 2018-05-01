@@ -6,7 +6,6 @@ import Rsvp from '../../components/rsvp/rsvp';
 class RsvpView extends Component {
   render() {
     const header = false;
-    console.log((process.env.NETLIFY_KEY));
 
     return (
       <Page
