@@ -4,8 +4,34 @@
     <meta charset="utf-8">
     <title>Shing Wedding</title>
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <!--- This example uses jQuery: -->
+      <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+
+      <!-- Make sure to include Nelify's authentiation library -->
+      <!-- Also available via npm as netlify-auth-providers -->
+      <script src="https://unpkg.com/netlify-auth-providers"></script>
+
+      <script>
+        $(function () {
+          $("#login").on("click", function (e) {
+            e.preventDefault();
+            var authenticator = new netlify.default({});
+            // netlify.configure({ site_id: "https://shingsquadwedding.netlify.com/" })
+            authenticator.authenticate({ provider: "github", scope: "user" }, function (err, data) {
+              if (err) {
+                return $("#output").text("Error Authenticating with GitHub: " + err);
+              }
+              $("#output").text("Authenticated with GitHub. Access Token: " + data.token);
+            });
+          });
+        });
+      </script>
   </head>
   <body>
+      <p>
+        <a href="#" id="login">Authenticate</a>
+      </p>
+      <p id="output"></p>
     <form name="contact" netlify netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
       <input type="email" name="email" />
