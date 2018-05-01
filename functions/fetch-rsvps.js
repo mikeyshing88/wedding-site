@@ -1,4 +1,4 @@
-require('whatwg-fetch');
+import 'whatwg-fetch';
 
 exports.handler = function (event, context, callback) {
   const token = process.env.NETLIFY_KEY;
