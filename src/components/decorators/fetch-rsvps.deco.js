@@ -5,9 +5,8 @@ import { utilFetch } from 'utils/utils';
 function RsvpDecorator(ComposedComponent) {
   return class RsvpDecoratorClass extends React.Component {
     /**
-     * Get JSON data
-     * @param  {String, string} variant, packageId
-     * @return {Object} optionsToRender
+     * Get JSON data of current RSVP guests
+     * @return {Array} rsvpJson
      */
     async getRsvpData() {
       const NETLIFY_FUNC = 'https://shingsquadwedding.netlify.com/.netlify/functions/fetch-rsvps';

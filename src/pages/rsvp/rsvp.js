@@ -15,7 +15,7 @@ class RsvpView extends Component {
   }
 
   /**
-   * Set current page option data into the state
+   * Set current RSVP guests
    * @param  {Object} props
    */
   setCurrentRsvps = (props) => {
