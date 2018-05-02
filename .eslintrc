@@ -53,13 +53,6 @@
       "error",
       140
     ],
-    "no-unused-vars": [
-      "error",
-      {
-        "vars": "all",
-        "args": "none"
-      }
-    ],
     "arrow-parens": "off",
     "padded-blocks": "off",
     "indent": [

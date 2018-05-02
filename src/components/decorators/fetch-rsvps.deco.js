@@ -11,11 +11,11 @@ function RsvpDecorator(ComposedComponent) {
      */
     async getRsvpData() {
       const NETLIFY_FUNC = 'https://shingsquadwedding.netlify.com/.netlify/functions/fetch-rsvps';
-      let apiUrl = '';
+      let rsvpJson = [];
+
       function fetchData(path) {
         return utilFetch(path).then((res) => {
-          console.log(res, 'fldjfl');
-          return res.json();
+          return JSON.parse(res);
         }).catch((error) => {
           /* eslint no-console: 0 */
           console.error('error', error);
@@ -23,13 +23,10 @@ function RsvpDecorator(ComposedComponent) {
       }
 
       await fetchData(NETLIFY_FUNC).then((res) => {
-        const optionData = res;
-        // Filter data to only show the defined visible IDs
-        apiUrl = optionData;
-        console.log(optionData, 'fkdjlkfjdfkd');
+        rsvpJson = res;
       });
 
-      return apiUrl;
+      return rsvpJson;
     }
 
     /**

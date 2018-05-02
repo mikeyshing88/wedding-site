@@ -25,7 +25,6 @@ export default function utilFetch(path) {
   return fetch(path, { credentials: 'same-origin' })
     .then(checkStatus)
     .then((res) => {
-      console.log(res, 'fkdjfk');
       return res.text();
     }).catch((error) => {
       /* eslint no-console: 0 */

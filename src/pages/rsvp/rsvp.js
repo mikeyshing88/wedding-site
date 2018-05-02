@@ -6,19 +6,23 @@ import Rsvp from '../../components/rsvp/rsvp';
 
 @RsvpDecorator
 class RsvpView extends Component {
+  state = {
+    currentRsvps: []
+  }
+
   componentWillMount() {
-    this.setPackageData(this.props);
+    this.setCurrentRsvps(this.props);
   }
 
   /**
    * Set current page option data into the state
    * @param  {Object} props
    */
-  setPackageData = (props) => {
+  setCurrentRsvps = (props) => {
     props.getRsvpData()
       .then((result) => {
         this.setState({
-          sub: result
+          currentRsvps: result
         });
       });
   }
